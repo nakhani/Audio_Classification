@@ -1,3 +1,4 @@
-final_data/
+final_data_singer/
 raw_data/
+vocal_data/
 *.keras

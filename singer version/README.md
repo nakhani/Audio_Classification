@@ -1,15 +1,28 @@
-# README: Training and Preprocessing Audio Data with TensorFlow
+# README: Training and Preprocessing singer Data with TensorFlow
 
-This document provides an overview of how to preprocess audio files, train a model using TensorFlow, and predict audio classes. 
+Singer Classification with TensorFlow & Telegram Bot This project utilizes TensorFlow to classify singers based on custom-generated audio data. It includes advanced preprocessing to enhance accuracy and a Telegram bot for interactive recognition. Users can explore, test, and contribute to refining the model.
+
+---
+## 1. Singer Selection & Voice Extraction
+
+- Choose **5 Persian singers** (e.g., Mohsen Chavoshi, Mohsen Yeganeh, Ebi, ...).
+- Collect **2 songs** from each singer.
+- Use **Spleeter** in Google Colab to extract the singer's voice from music:
+
+    - Installs **FFmpeg** and **Spleeter**
+    - Loads audio files from `raw_data`
+    - Creates a `vocals` directory for output
+    - Uses Spleeter (`2stems` model) to split vocals & accompaniment
+    - Saves extracted vocals in `/dataset/vocals/`
 
 ---
 
-## 1. Preprocessing Audio Data
+## 2. Preprocessing Audio Data
 
 Before training, the raw audio data needs to be processed to ensure uniformity and compatibility with the model. Here's how the preprocessing works:
 
 ### **Input**
-Audio files located in a folder named `raw_data`.
+Audio files located in a folder named `vocals`.
 
 ### **Processing Steps**
 1. **Merge Files**:
@@ -26,19 +39,19 @@ Audio files located in a folder named `raw_data`.
    
 4. **Chunking**:
    - Break audio into 1-second chunks (or longer).
-   - Export chunks as WAV files into a folder structure under `final_data`.
+   - Export chunks as WAV files into a folder structure under `final_data_singer`.
 
 ### **Output**
 Processed audio chunks saved in subfolders, ready for training.
 
 ---
 
-## 2. Training the Model
+## 3. Training the Model
 
 Using the preprocessed audio data, a deep learning model is trained. 
 
 ### **Loading Data**
-- Use TensorFlow's `audio_dataset_from_directory` to load audio files from `final_data`.
+- Use TensorFlow's `audio_dataset_from_directory` to load audio files from `final_data_singer`.
 - Split the dataset into training (80%) and validation (20%).
 - Each audio file is converted into sequences of length **48,000 samples**.
 
@@ -63,7 +76,7 @@ A **1D Convolutional Neural Network (CNN)** with the following layers:
 
 ---
 
-## 3. Model Evaluation
+## 4. Model Evaluation
 
 ### **Metrics During Training**
 - The accuracy and loss are plotted for training and validation sets.
@@ -76,19 +89,21 @@ A **1D Convolutional Neural Network (CNN)** with the following layers:
 
  | Epoch | Train Accuracy | Validation Accuracy | Train Loss | Validation Loss |
  |-------|----------------|---------------------|------------|-----------------|
- |  20   | 0.88           | 0.97                | 0.57       | 0.32            |
+ |  20   | 0.86           | 0.88                | 0.51       | 0.42            |
  
+
 
 ---
 
-## 4. Predicting Audio Classes
+## 5. Predicting Audio Classes
 
 A custom function is provided to make predictions on new audio files.
 
 ### **Steps**
-1. Convert the audio file into a WAV format if it's not already.
-2. Load and preprocess the audio (pad/truncate to 48,000 samples).
-3. Pass the audio to the trained model to predict its class.
+1. Extract the vocal of song.
+2. Convert the audio file into a WAV format if it's not already.
+3. Load and preprocess the audio (pad/truncate to 48,000 samples).
+4. Pass the audio to the trained model to predict its class.
 
 ### **Example Usage**
 ```python
@@ -99,27 +114,27 @@ print(f"Predicted class: {predicted_class}")
 ---
 ### 📌 Resources
 
-- **📥 Download persian audio classification model**: [Download Here](https://drive.google.com/file/d/1A4raAU0s7rcTN7wEHYDtFxvTYsuFIef3/view?usp=sharing) 
+- **📥 Download persian singer classification model**: [Download Here](https://drive.google.com/file/d/1CgTtGdwv3i2CSXwIXP9No_dLj5-1pd39/view?usp=sharing) 
 ---
 
 ## How to Run the Code
 1. Clone the repository:
 
 ```
-https://github.com/nakhani/Deep-Learning/tree/5bfde3078d81c13af5719e664e9d8d5f7a161696/Audio%20Classification/classmate%20version
+https://github.com/nakhani/Audio_Classification/tree/ce200d15a7657e612600b9b6b1f689f3b2d0f983/singer%20version
 ```
 
 2. Navigate to the directory:
 
 ```
-   Introduction to classmate version
+   Introduction to singer version
 ```
 
 4. Run the assignments:
   
 ```
-jupyter notebook preprocessing.ipynb  # For preprocessing the audio files
-jupyter notebook model.ipynb          # For training the audio classification model
+jupyter notebook preprocessing_singer_data.ipynb  # For preprocessing the audio files
+jupyter notebook model_singer.ipynb          # For training the audio classification model
 jupyter notebook telebot.ipynb          # For running telegram bot
 
 ```
