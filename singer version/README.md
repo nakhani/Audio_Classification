@@ -113,8 +113,8 @@ print(f"Predicted class: {predicted_class}")
 ```
 ---
 ### 📌 Resources
+- **📥 Download persian singer classification model**: [Download Here](https://drive.google.com/file/d/1m46YXM19L27skKjfpq0N7Lj3lThu11DW/view?usp=sharing) 
 
-- **📥 Download persian singer classification model**: [Download Here](https://drive.google.com/file/d/1CgTtGdwv3i2CSXwIXP9No_dLj5-1pd39/view?usp=sharing) 
 ---
 
 ## How to Run the Code

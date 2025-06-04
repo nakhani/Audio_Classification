@@ -34,8 +34,7 @@ This repository contains **multiple subprojects** focused on **audio processing,
 
 - Build a **Telegram bot** to handle user voice submissions
 
-   <img src="Accuracy.png" width = "300">
-   <img src="Accuracy.png" width = "300">
+   <img src="telegrambot/photo_5911031359567153468_y.jpg" width = "300">
    
 - Process received voice messages automatically
 - Run predictions using **trained models**
@@ -43,7 +42,9 @@ This repository contains **multiple subprojects** focused on **audio processing,
 - Supports both **friend recognition** and **singer identification**
 - You can Download weights here:
   - **📥 Download persian friend classification model**: [Download Here](https://drive.google.com/file/d/1A4raAU0s7rcTN7wEHYDtFxvTYsuFIef3/view?usp=sharing) 
-  - **📥 Download persian singer classification model**: [Download Here](https://drive.google.com/file/d/1CgTtGdwv3i2CSXwIXP9No_dLj5-1pd39/view?usp=sharing) 
+  - **📥 Download persian singer classification model**: [Download Here](https://drive.google.com/file/d/1m46YXM19L27skKjfpq0N7Lj3lThu11DW/view?usp=sharing) 
+- The Audio Classification Telegram Bot ID is :
+  - `@AudioClassification_bot`
 
 ---
 
